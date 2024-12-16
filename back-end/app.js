@@ -3,6 +3,9 @@ const express = require('express');
 const connerDB = require('./configurations/db.config');
 const cors = require('cors');
 
+// config the db
+dotenv.config();
+
 // routes
 const userRoute = require('./routes/user.routes');
 const classRoute = require('./routes/class.routes');
@@ -11,7 +14,6 @@ const videoRoute = require('./routes/video.routes');
 const blogRoute = require('./routes/blog.routes');
 
 // Initialize app and load environment variables
-dotenv.config();
 const app = express();
 
 if (!process.env.PORT || !process.env.MONGO_URI) {
@@ -24,6 +26,7 @@ if (!process.env.PORT || !process.env.MONGO_URI) {
   // Middlewares
 app.use(express.json()); 
 app.use(cors()); 
+app.use(express.urlencoded({extended: true}));
 
 app.use('/users',userRoute);
 app.use('/classes', classRoute);
