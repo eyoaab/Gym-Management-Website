@@ -1,6 +1,7 @@
 const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cloudinary = require('../configurations/cloudinary.config');
 
 // to save a user
 exports.createUser = async (req,res) => {
@@ -86,19 +87,45 @@ exports.getUserById = async (req, res) => {
   };
 
 
-// Update a user
-exports.updateUser = async (req, res) => {
+  exports.updateUser = async (req, res) => {
     try {
-  
       const tempUser = await User.findById(req.params.id);
-      if (!tempUser) return res.status(404).json({ message: 'User not found please try again' });
-      const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      if (!tempUser) {
+        return res.status(404).json({ message: 'User not found. Please try again.' });
+      }
+      const { name, email, socialLinks } = req.body;
   
-      res.statu(200).json(user);
+      let imageUrl = tempUser.imageUrl; 
+      if (req.file) {
+        try {
+          const result = await cloudinary.uploader.upload(req.file.path);
+          imageUrl = result.secure_url; 
+        } catch (error) {
+          return res.status(500).json({
+            message: 'Error uploading image to Cloudinary.',
+            error: error.message,
+          });
+        }
+      }
+  
+      const updatedFields = {
+        name: name || tempUser.name,
+        email: email || tempUser.email,
+        socialLinks: socialLinks || tempUser.socialLinks,
+        imageUrl,
+      };
+  
+      const updatedUser = await User.findByIdAndUpdate(req.params.id, updatedFields, { new: true });
+  
+      res.status(200).json(updatedUser);
     } catch (error) {
-      res.status(400).json({ message: error.message });
+      res.status(400).json({
+        message: 'Failed to update user.',
+        error: error.message,
+      });
     }
   };
+
 
 
 

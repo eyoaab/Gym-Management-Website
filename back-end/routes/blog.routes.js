@@ -1,9 +1,9 @@
 const blogController = require('../controllers/blog.controller');
 const router = require('express').Router();
-const authMiddleware = require('../middlewares/auth-midleware');
+const upload = require('../configurations/multer.config');
 
 // create a blog 
-router.post('/', authMiddleware, blogController.createBlog);
+router.post('/',  upload.single("imageUrl"), blogController.createBlog);
 // get all blogs
 router.get('/', blogController.getAllBlogs);
 
@@ -14,7 +14,7 @@ router.get('/:id', blogController.getBlogById);
 router.delete('/:id', blogController.deleteBlog);
 
 // update a blog
-router.put('/:id', blogController.updateBlog);
+router.put('/:id', upload.single("imageUrl"), blogController.updateBlog);
 
 // get all blogs for a specific user
 router.get('/user/:id', blogController.getAllUserBlogs);

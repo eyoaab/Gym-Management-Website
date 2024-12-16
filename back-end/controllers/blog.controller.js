@@ -1,4 +1,5 @@
 const Blog = require('../models/blog.model');
+const cloudinary = require('../configurations/cloudinary.config');
 
 // create a new blog
 exports.createBlog = async (req, res) => {
@@ -10,12 +11,27 @@ exports.createBlog = async (req, res) => {
                 message: 'Title and desc are required fields.'
             });
         }
+        let imageUrl = ''; 
+            if (req.file) {
+            try {
+                const result = await cloudinary.uploader.upload(req.file.path);
+                imageUrl = result.secure_url;
+            } catch (error) {
+                return res.status(500).json({
+                message: 'Error uploading image to Cloudinary.',
+                error: error.message,
+                });
+            }
+            }
 
-        
-        // Create a new blog post with the provided data and author (userId)
-        const blog = new Blog(req.body)
+            const blog ={
+                imageUrl:imageUrl,
+                title: title,
+                description: description,
+                author: req.body.author,
+                readTime: req.body.readTime
+            }
 
-        // Save the blog post to the database
         await blog.save();
 
         
@@ -24,7 +40,6 @@ exports.createBlog = async (req, res) => {
             blog
         });
     } catch (error) {
-        // Handle validation errors
         if (error.name === 'ValidationError') {
             const messages = Object.values(error.errors).map(val => val.message);
             return res.status(400).json({
@@ -33,7 +48,6 @@ exports.createBlog = async (req, res) => {
             });
         }
 
-        // Handle other errors (e.g. server or database errors)
         res.status(500).json({
             message: 'An unexpected error occurred while creating the blog.',
             error: error.message || error
@@ -66,14 +80,44 @@ exports.getBlogById = async (req, res) => {
 // to update a  blog
 exports.updateBlog = async (req, res) => {
     try {
-        const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!blog) return res.status(404).json({ message: 'Blog not found' });
-        res.status(200).json(blog);
+      const blog = await Blog.findById(req.params.id);
+      if (!blog) {
+        return res.status(404).json({ message: 'Blog not found' });
+      }
+  
+      let imageUrl = blog.imageUrl; 
+      if (req.file) {
+        try {
+          const result = await cloudinary.uploader.upload(req.file.path);
+          imageUrl = result.secure_url; 
+        } catch (error) {
+          return res.status(500).json({
+            message: 'Error uploading image to Cloudinary.',
+            error: error.message,
+          });
+        }
+      }
+  
+      const { title, description, author, readTime } = req.body;
+  
+      const updatedFields = {
+        imageUrl,
+        title: title || blog.title,
+        description: description || blog.description,
+        author: author || blog.author,
+        readTime: readTime || blog.readTime,
+      };
+  
+      const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, updatedFields, { new: true });
+  
+      res.status(200).json(updatedBlog);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+      res.status(400).json({
+        message: 'Failed to update the blog.',
+        error: error.message,
+      });
     }
-};
-
+  };
 // to finds all blogs with spasfic userid
 exports.getAllUserBlogs = async (req, res) => {
     try {
