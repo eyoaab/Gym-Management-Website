@@ -3,7 +3,7 @@ import cardImage from '../../../assets/images/claassCard.jpeg';
 
 function ClassCard() {
   return (
-    <div className="relative group w-[350px] h-[50vh] lg:h-[400px] rounded-lg overflow-auto">
+    <div className="relative group w-[350px] h-[50vh] lg:h-[400px] rounded-6xl overflow-auto">
       {/* Image Background with Transform on Hover */}
       <div
         className="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-in-out 

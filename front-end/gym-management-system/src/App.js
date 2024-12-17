@@ -1,9 +1,9 @@
 import './App.css';
-import ClassesPage from './pages/classes-page/cards-page';
+import ShortBlogsPage from './pages/blogs-page/short-blog-page';
 function App() {
   return (
     <div className="App">
-      <ClassesPage />
+      <ShortBlogsPage />
      
     </div>
   );

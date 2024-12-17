@@ -16,6 +16,7 @@ module.exports = {
         darkYellow: '#DDCA24',
         cardColor: '#323232',
         classBg:'#212121'
+        
       },
       
     },
