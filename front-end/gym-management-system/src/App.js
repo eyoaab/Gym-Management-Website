@@ -1,9 +1,9 @@
 import './App.css';
-import HomePage from './pages/home-page/home-page';
+import ClassesPage from './pages/classes-page/cards-page';
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <ClassesPage />
      
     </div>
   );
