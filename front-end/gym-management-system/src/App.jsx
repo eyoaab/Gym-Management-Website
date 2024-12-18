@@ -1,9 +1,9 @@
 import './App.css';
-import Footer from './components/footer';
+import ShowLongBlogs from './pages/blogs-page/show-long-blogs';
 function App() {
   return (
     <div className="App">
-      <Footer />
+      <ShowLongBlogs />
      
     </div>
   );

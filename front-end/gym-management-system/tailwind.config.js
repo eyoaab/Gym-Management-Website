@@ -16,8 +16,19 @@ module.exports = {
         darkYellow: '#DDCA24',
         cardColor: '#323232',
         classBg:'#212121',
-        footerColor:'#303030'
+        footerColor:'#303030',
+        blogText:'#E0E0E0'
         
+      },
+      keyframes: {
+        slideInLeft: {
+          '0%': {
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+          },
+        },
       },
       
     },
