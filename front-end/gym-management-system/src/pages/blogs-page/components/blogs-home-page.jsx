@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../../components/header";
-import backgroundImage from '../../assets/images/aboutPageBanner.jpeg';
-import AboutDescreption from "./components/about-descreption";
+import Header from "../../../components/header";
+import backgroundImage from '../../../assets/images/blogPageBanner.jpeg';
+import BlogDescreption from "./blog-descreption";
 
-function AboutHomePage() {
+function BlogHomePage() {
   return (
     <div
       className="bg-cover bg-center bg-no-repeat h-screen w-full flex flex-col items-between justify-start"
@@ -11,11 +11,11 @@ function AboutHomePage() {
     >
       <div className="text-start" >
         <Header />
-        <AboutDescreption />
+        <BlogDescreption />
 
       </div>
     </div>
   );
 }
 
-export default AboutHomePage;
+export default BlogHomePage;

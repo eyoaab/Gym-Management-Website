@@ -24,7 +24,7 @@ function ContactPage() {
                         />
                         <button
                             type="submit"
-                            className="px-4 py-1 bg-yellow-500 text-black font-semibold rounded-md"
+                            className="px-4 py-1 bg-darkYellow text-black font-semibold rounded-md"
                         >
                             Subscribe
                         </button>

@@ -1,44 +1,47 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
+  const location = useLocation(); 
+
   return (
-    <nav className="bg-gray-500 bg-opacity-30 y- px-4 py-2 w-min  mt-1 ml-3 rounded-lg">
+    <nav className="bg-gray-500 bg-opacity-30 px-4 py-2 w-min mt-1 ml-3 rounded-lg font-saira">
       <ul className="flex space-x-6">
         <li>
-          <a 
-            href="/" 
-            className="text-white text-xl font-Robot-bold hover:text-yellow-400 px-3 py-2"
+          <Link
+            to="/"
+            className={`text-xl font-Robot-bold px-3 py-2 ${location.pathname === '/' ? 'text-yellow-400' : 'text-white'}`}
             aria-label="Home"
           >
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a 
-            href="/about" 
-            className="text-white text-xl font-Robot-bold hover:text-yellow-400 px-3 py-2"
+          <Link
+            to="/about"
+            className={`text-xl font-Robot-bold px-3 py-2 ${location.pathname === '/about' ? 'text-yellow-400' : 'text-white'}`}
             aria-label="About"
           >
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a 
-            href="/services" 
-            className="text-white text-xl font-Robot-bold hover:text-yellow-400 px-3 py-2"
-            aria-label="Services"
+          <Link
+            to="/blogs"
+            className={`text-xl font-Robot-bold px-3 py-2 ${location.pathname === '/blogs' ? 'text-yellow-400' : 'text-white'}`}
+            aria-label="Blogs"
           >
             Blog
-          </a>
+          </Link>
         </li>
         <li>
-          <a 
-            href="/contact" 
-            className="text-white text-xl font-Robot-bold hover:text-yellow-400 px-3 py-2"
-            aria-label="Contact"
+          <Link
+            to="/products"
+            className={`text-xl font-Robot-bold px-3 py-2 ${location.pathname === '/products' ? 'text-yellow-400' : 'text-white'}`}
+            aria-label="Products"
           >
             Products
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
