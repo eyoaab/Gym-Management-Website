@@ -1,6 +1,6 @@
 import React from 'react';
 import ShortBlogCard from './components/short-blog-card';
-import { FaArrowRight } from 'react-icons/fa'; // Ensure FaArrowRight is imported
+import { FaArrowRight } from 'react-icons/fa'; 
 
 function ShortBlogsPage() {
   return (

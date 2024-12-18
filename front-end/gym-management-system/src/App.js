@@ -1,9 +1,9 @@
 import './App.css';
-import ShortBlogsPage from './pages/blogs-page/short-blog-page';
+import Footer from './components/footer';
 function App() {
   return (
     <div className="App">
-      <ShortBlogsPage />
+      <Footer />
      
     </div>
   );
