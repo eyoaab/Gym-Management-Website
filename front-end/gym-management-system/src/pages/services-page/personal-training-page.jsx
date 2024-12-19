@@ -1,4 +1,6 @@
 import React from "react";
+import { Link,} from "react-router-dom";
+
 import { FaArrowRight } from "react-icons/fa";
 import trainingImage1 from "../../assets/images/personalTraier.jpeg";
 import trainingImage from "../../assets/images/personalTraainer1.jpeg";
@@ -12,17 +14,20 @@ function PersonalTrainingPage() {
           <h1 className="text-4xl lg:text-5xl  mb-4 text-left text-white font-saira">PERSONAL<br/> TRAINING</h1>
 
           {/* Small Card */}
+                <Link
+                to='/login'>
           <div className="w-full sm:w-[70%] md:w-[60%] lg:w-[15vw] rounded-xl p-6 bg-gray-900 text-white">
             <h2 className="text-lg lg:text-2xl font-saira mb-2 text-left">WE OFFER</h2>
             <p className="mb-4 text-left text-gray-300 ">Free trial sessions for new members</p>
             <button className="flex items-center justify-between bg-white text-black py-2 px-4 rounded-2xl">
-              <span className="font-light ">Sign Up</span>
+                 <span className="font-light ">Sign Up</span>
               <div className="bg-darkYellow rounded-full w-7 h-7 flex justify-center items-center ml-2">
 
               <FaArrowRight />
               </div>
             </button>
           </div>
+              </Link>
         </div>
 
         {/* Second Column */}

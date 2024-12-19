@@ -16,7 +16,7 @@ function ContactPage() {
                     </p>
 
                     {/* Newsletter Subscription Form */}
-                    <form className="flex flex-row items-center bg-darkGray opacity-90 px-2 py-2 w-3/4 rounded-md ">
+                    <div className="flex flex-row items-center bg-darkGray opacity-90 px-2 py-2 w-3/4 rounded-md ">
                         <input
                             type="email"
                             placeholder="Enter your email..."
@@ -28,7 +28,7 @@ function ContactPage() {
                         >
                             Subscribe
                         </button>
-                    </form>
+                    </div>
 
                     {/* Privacy Disclaimer */}
                     <p className="text-sm text-gray-400 w-3/4 text-start">
