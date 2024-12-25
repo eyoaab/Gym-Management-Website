@@ -5,7 +5,7 @@ const cloudinary = require('../configurations/cloudinary.config');
 exports.createBlog = async (req, res) => {
     try {
         // Check if the request body has the required fields
-        const { title, description } = req.body;
+        const { title, description ,author ,readTime } = req.body;
         if (!title || !description) {
             return res.status(400).json({
                 message: 'Title and desc are required fields.'
@@ -24,13 +24,13 @@ exports.createBlog = async (req, res) => {
             }
             }
 
-            const blog ={
+            const blog = new Blog({
                 imageUrl:imageUrl,
-                title: title,
-                description: description,
-                author: req.body.author,
-                readTime: req.body.readTime
-            }
+                title,
+                description,
+                author,
+                readTime
+            });
 
         await blog.save();
 

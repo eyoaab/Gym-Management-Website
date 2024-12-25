@@ -20,11 +20,11 @@ function App() {
           <Route exact path="/products" element={<ProductPage />} />
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/signup" element={<SignUpPage />} />
-         <Route exact path="*" element={<PageNotFound />} />
+          <Route exact path="*" element={<PageNotFound />} />
         </Routes>
+        
       </Router> 
       }
-
      
     </div>
   );
