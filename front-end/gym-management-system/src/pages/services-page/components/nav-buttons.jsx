@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 function NavButtons({ index, ChangeToIndex }) {
-  const [colors, setColors] = useState({ startColor: "#FFFFFF", endColor: "#DDCA24" });
+  const [colors, setColors] = useState({
+    startColor: "#FFFFFF",
+    endColor: "#DDCA24",
+  });
 
   useEffect(() => {
     const getCurrentColor = (currentIndex) => {
@@ -17,20 +20,42 @@ function NavButtons({ index, ChangeToIndex }) {
   }, [index]);
 
   return (
-    <div className="flex flex-row justify-between px-10 py-5">
+    <div className="flex flex-row justify-between px-0 py-5 sm:px-3">
       {/* Next Button */}
-      <button onClick={() => ChangeToIndex( index == 2 ? 0 : index + 1)} aria-label="Next">
+      <button
+        onClick={() => ChangeToIndex(index == 2 ? 0 : index + 1)}
+        aria-label="Next"
+      >
         <div className="flex items-center justify-start relative">
-          <IoIosArrowForward color={colors.startColor} size={80} className="relative z-10" />
-          <IoIosArrowForward color={colors.endColor} size={80} className="absolute left-6 top-0 z-0" />
+          <IoIosArrowForward
+            color={colors.startColor}
+            size={80}
+            className="relative z-10"
+          />
+          <IoIosArrowForward
+            color={colors.endColor}
+            size={80}
+            className="absolute left-6 top-0 z-0"
+          />
         </div>
       </button>
 
       {/* Previous Button */}
-      <button onClick={() => ChangeToIndex(index == 0 ? 2 : index - 1)} aria-label="Previous">
+      <button
+        onClick={() => ChangeToIndex(index == 0 ? 2 : index - 1)}
+        aria-label="Previous"
+      >
         <div className="flex items-center justify-start relative">
-          <IoIosArrowBack color={colors.endColor} size={80} className="absolute left-6 top-0 z-0" />
-          <IoIosArrowBack color={colors.startColor} size={80} className="relative z-10" />
+          <IoIosArrowBack
+            color={colors.endColor}
+            size={80}
+            className="absolute left-6 top-0 z-0"
+          />
+          <IoIosArrowBack
+            color={colors.startColor}
+            size={80}
+            className="relative z-10"
+          />
         </div>
       </button>
     </div>
