@@ -11,17 +11,15 @@ import Footer from "../../components/footer";
 
 function MainPage() {
   return (
-    <div className="flex flex-col">
-      {/* <HomePage /> */}
-      {/* <ServicePage /> */}
-      {/* <ClassesPage /> */}
-      {/* <TeatimonialsPage /> */}
-      {/* <ShortBlogsPage /> */}
-      {/* <PlansOptionPage /> */}
-      {/* <ContactPage /> */}
+    <div className="flex flex-col overflow-x-hidden">
+      <HomePage />
+      <ServicePage />
+      <ClassesPage />
+      <TeatimonialsPage />
+      <ShortBlogsPage />
+      <PlansOptionPage />
+      <ContactPage />
       <Footer />
-      {/*
-       */}
     </div>
   );
 }
