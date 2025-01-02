@@ -8,9 +8,9 @@ function BlogPage() {
   return (
     <div className="flex flex-col">
       <BlogHomePage />
-      {/* <ShowLongBlogs />
-            <ContactPage />
-            <Footer /> */}
+      <ShowLongBlogs />
+      <ContactPage />
+      <Footer />
     </div>
   );
 }
