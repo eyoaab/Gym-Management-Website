@@ -13,6 +13,7 @@ pids/
 
 # Dependency directories
 node_modules/
+./back-end/gym-management-system/node_modules
 ./back-end/node_modules/
 bower_components/
 jspm_packages/
@@ -27,7 +28,6 @@ coverage/
 .next/
 .nuxt/
 .vuepress/dist
-public/
 .out/
 
 # Compiled binary addons
@@ -104,9 +104,6 @@ junit-report.xml
 # Thumbnails
 Thumbs.db
 ehthumbs.db
-
-# Hexo build output
-public/
 
 # Miscellaneous
 *.bak
