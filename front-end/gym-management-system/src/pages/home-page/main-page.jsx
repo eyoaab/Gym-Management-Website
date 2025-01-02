@@ -18,9 +18,10 @@ function MainPage() {
       {/* <TeatimonialsPage /> */}
       {/* <ShortBlogsPage /> */}
       {/* <PlansOptionPage /> */}
-      <ContactPage />
+      {/* <ContactPage /> */}
+      <Footer />
       {/*
-            <Footer /> */}
+       */}
     </div>
   );
 }
