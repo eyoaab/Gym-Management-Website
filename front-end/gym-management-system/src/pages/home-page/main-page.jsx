@@ -13,11 +13,11 @@ function MainPage() {
   return (
     <div className="flex flex-col">
       {/* <HomePage /> */}
-      <ClassesPage />
+      {/* <ServicePage /> */}
+      {/* <ClassesPage /> */}
+      {/* <TeatimonialsPage /> */}
+      <ShortBlogsPage />
       {/*
-      <ServicePage />
-            <TeatimonialsPage />
-            <ShortBlogsPage />
             <PlansOptionPage />
             <ContactPage />
             <Footer /> */}
