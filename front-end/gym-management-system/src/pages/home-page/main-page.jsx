@@ -16,9 +16,9 @@ function MainPage() {
       {/* <ServicePage /> */}
       {/* <ClassesPage /> */}
       {/* <TeatimonialsPage /> */}
-      <ShortBlogsPage />
+      {/* <ShortBlogsPage /> */}
+      <PlansOptionPage />
       {/*
-            <PlansOptionPage />
             <ContactPage />
             <Footer /> */}
     </div>
