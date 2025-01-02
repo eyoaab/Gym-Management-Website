@@ -13,9 +13,9 @@ function MainPage() {
   return (
     <div className="flex flex-col">
       {/* <HomePage /> */}
-      <ServicePage />
+      <ClassesPage />
       {/*
-            <ClassesPage />
+      <ServicePage />
             <TeatimonialsPage />
             <ShortBlogsPage />
             <PlansOptionPage />
