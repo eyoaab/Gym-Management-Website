@@ -5,7 +5,7 @@ function ContactPage() {
     <div className="md:px-20  py-20 px-2  bg-classBg w-full overflow-clip ">
       <div className="flex flex-col md:flex-row justify-between items-center  space-x-10 w-full">
         {/* Heading */}
-        <h1 className="font-saira text-white text-5xl md:text-5xl lg:text-6xl text-center md:text-left xsm:hidden mb-5 ">
+        <h1 className="font-saira text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center md:text-left xsm:hidden mb-5 ">
           NEWSLETTER
         </h1>
 

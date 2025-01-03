@@ -34,7 +34,9 @@ function ShortBlogCard() {
               className="h-6 w-6 lg:h-8 lg:w-8 bg-cover bg-center bg-no-repeat rounded-full"
               style={{ backgroundImage: `url(${ProfileImg})` }}
             ></div>
-            <p className="text-white ml-2">Jane Doe</p>
+            <p className="text-white sm:ml-2 ml-1 text-[11px] sm:text-[15px]">
+              Jane Doe
+            </p>
           </div>
 
           {/* Additional Info */}

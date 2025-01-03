@@ -35,7 +35,7 @@ function LongBlogAppCard() {
       : description;
 
   return (
-    <div className="bg-darkGray w-6/7 rounded-2xl flex flex-row pr-4 h-60">
+    <div className="bg-darkGray w-6/7 rounded-2xl flex flex-row pr-0  sm:pr-4 h-60">
       {/* Blog Image Section */}
       <div className="h-full w-1/3 overflow-hidden rounded-tl-2xl rounded-bl-2xl hidden sm:block ">
         <img
@@ -70,22 +70,22 @@ function LongBlogAppCard() {
         </h1>
 
         {/* Description */}
-        <p className="text-blogText text-[14px] font-inter mb-6 text-left md:w-3/4 w-full">
+        <p className="text-blogText text-[14px] font-inter mb-2 sm:mb-6 text-left md:w-3/4 w-full">
           {truncatedText}
         </p>
 
         {/* Buttons Section */}
         <div className="flex flex-row justify-between items-center">
           {/* Read More Button */}
-          <div className="flex items-center bg-darkYellow text-black md:py-2 md:px-5 px-3 py-1 rounded-lg cursor-pointer md-px-2 md-py-1">
-            <span className="font-light">Read More</span>
-            <div className="bg-white rounded-md w-5 h-5 flex justify-center items-center md-ml-1 md-w-6 md-h-6 ml-2">
+          <div className="flex px-1 items-center bg-darkYellow text-black md:py-2 md:px-5 sm:px-3 py-0 sm:py-1 rounded-lg cursor-pointer md-px-2 md-py-1">
+            <span className="font-light text-sm">Read More</span>
+            <div className="hidden bg-white rounded-md w-5 h-5 sm:flex justify-center items-center md-ml-1 md-w-6 md-h-6 ml-2">
               <FaArrowRight size={12} />
             </div>
           </div>
 
           {/* Reading Time Info */}
-          <div className="text-sm text-blogText flex flex-row items-center space-x-2">
+          <div className="text-sm text-blogText flex flex-row items-center  space-x-.5 sm:space-x-2">
             <div className="h-3 w-3 rounded-full bg-darkYellow"></div>
             <p className="hidden md:block">Suggestion</p>
             <p className="text-darkYellow">5 min read</p>

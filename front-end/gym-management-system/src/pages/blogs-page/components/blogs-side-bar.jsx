@@ -14,7 +14,7 @@ const CategoryItem = ({ name }) => (
 );
 
 const TagItem = ({ name }) => (
-  <div className="rounded-lg bg-darkYellow flex items-center justify-center text-[16px] px-3 py-2">
+  <div className="sm:rounded-lg rounded-md bg-darkYellow flex items-center justify-center text-[13px] sm:text-[16px] px-3 py-2">
     {name}
   </div>
 );
@@ -30,12 +30,12 @@ function BlogsSideBar() {
 
   return (
     <div
-      className={`w-[90%] lg:w-[50%] md:w-4/6 p-5  flex flex-col items-start text-start bg-white space-y-5 transition-transform duration-1000 ease-in-out rounded-lg ${
+      className={`w-[100%] sm:-w-[90%] lg:w-[50%] md:w-4/6 p-5  flex flex-col items-start text-start bg-white space-y-5 transition-transform duration-1000 ease-in-out rounded-lg ${
         isVisible ? "transform translate-x-0" : "transform -translate-x-full"
       }`}
     >
       {/* Search Bar */}
-      <div className="rounded-md w-full bg-classBg opacity-60 opacity-2 flex items-center justify-between p-3">
+      <div className="rounded-md w-full bg-classBg opacity-60 opacity-2 flex items-center justify-between p-1 sm:p-3">
         <input
           type="text"
           className="w-full border-none placeholder:italic placeholder-gray-200 text-white bg-transparent focus:outline-none "
@@ -48,7 +48,7 @@ function BlogsSideBar() {
       {/* Categories */}
       <div className="w-full">
         <h1 className="font-saira text-[20px] mb-3">Categories</h1>
-        <ul className="pl-7 space-y-2">
+        <ul className="pl-3 sm:pl-7 space-y-2">
           {categories.map((category, index) => (
             <CategoryItem key={index} name={category} />
           ))}
@@ -68,7 +68,7 @@ function BlogsSideBar() {
       {/* Popular Tags */}
       <div className="w-full">
         <h1 className="font-saira text-[20px] mb-3">Popular Tags</h1>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-1 sm:gap-3">
           {tags.map((tag, index) => (
             <TagItem key={index} name={tag} />
           ))}
