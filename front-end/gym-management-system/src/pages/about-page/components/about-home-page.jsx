@@ -1,18 +1,17 @@
 import React from "react";
 import Header from "../../../components/header";
-import backgroundImage from '../../../assets/images/aboutPageBanner.jpeg';
+import backgroundImage from "../../../assets/images/aboutPageBanner.jpeg";
 import AboutDescreption from "./about-descreption";
 
 function AboutHomePage() {
   return (
     <div
-      className="bg-cover bg-center bg-no-repeat h-screen w-full flex flex-col items-between justify-start"
+      className="bg-cover bg-center bg-no-repeat h-screen w-full flex flex-col items-between justify-start overflow-x-hidden"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="text-start" >
+      <div className="text-start">
         <Header />
         <AboutDescreption />
-
       </div>
     </div>
   );
