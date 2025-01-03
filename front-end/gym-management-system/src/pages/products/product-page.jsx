@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRegHourglass } from "react-icons/fa";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import Header from "../../components/header";
 
 function ProductPage() {
@@ -41,12 +41,13 @@ function ProductPage() {
 
       {/* Description Text with Animation */}
       <motion.p
-        className="text-xl font-saira text-white mt-4 max-w-lg mx-auto"
+        className="text-xl font-saira text-white mt-4 max-w-lg mx-auto px-4 md:px-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        Stay tuned! Our products are on their way, and we can’t wait to share them with you.
+        Stay tuned! Our products are on their way, and we can’t wait to share
+        them with you.
       </motion.p>
 
       {/* Actionable Button with Hover Effect */}
