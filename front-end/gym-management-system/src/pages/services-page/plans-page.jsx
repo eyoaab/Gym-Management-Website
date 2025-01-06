@@ -33,14 +33,14 @@ function PlaningPage() {
         ></div>
 
         {/* Third Column */}
-        <div className="grid p-x-3 grid-cols-2 lg:grid-cols-1 md:grid-cols-1 gap-3 ">
+        <div className="grid p-x-3 grid-cols-2 lg:grid-cols-1 md:grid-cols-1 gap-3  ">
           <div
             className="h-[35vh] md:h-[30vh] bg-cover bg-center bg-no-repeat rounded-lg mb-6"
             style={{ backgroundImage: `url(${planImage1})` }}
           ></div>
 
           {/* Plan Container */}
-          <div className="bg-darkYellow rounded-xl p-3 w-max h-min lg:max-w-[240px]  ">
+          <div className="bg-darkYellow rounded-xl w-[150px] p-1 sm:p-3 sm:w-max h-min lg:max-w-[240px]  ">
             <p className="text-2xl font-saira text-black text-left">Plans</p>
             <div className="space-y-1">
               {/* Plan Options */}

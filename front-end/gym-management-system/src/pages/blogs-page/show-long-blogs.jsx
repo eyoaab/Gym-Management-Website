@@ -10,7 +10,7 @@ function ShowLongBlogs() {
     setIsSidebarOpen(!isSidebarOpen);
   };
   return (
-    <div className="flex flex-col bg-classBg lg:pl-20 pl-10 pr-10 lg:pr-40">
+    <div className="flex flex-col  bg-classBg lg:pl-20 pl-20 pr-10 lg:pr-40">
       <div
         className="flex flex-row items-center py-10 space-x-2"
         onClick={handleToggleSidebar}
